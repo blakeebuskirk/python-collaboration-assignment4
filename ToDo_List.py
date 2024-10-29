@@ -31,13 +31,19 @@ def Delete_Tasks(number_of_task):
 	except IndexError:
 		print("That Task number does not exist. Please enter a valid task number")
 
+#To Sort the Tasks Alphabetically
+def Sort_Tasks():
+	ToDo_List.sort()
+	print("Your ToDo List has been sorted Alphabetically.")
+
 while True:
 	print("""ToDo List(Select A Number)
 				1. Add Task
 				2. View Tasks
 				3. Complete Tasks
 				4. Delete Tasks
-				5. Exit""")
+				5. Sort Tasks
+				6. Exit""")
 	x = input("Choose an option for your ToDo List:")
 	
 	if x == "1":
@@ -52,6 +58,8 @@ while True:
 		number_of_task = int(input("Enter the number of the task you want to delete from your list"))
 		Delete_Tasks(number_of_task)
 	elif x == "5":
+		Sort_Tasks()
+	elif x =="6":
 		break
 	else:
 		print("You have entered an Invalid Choice. Please Enter A Valid Choice Number.")
